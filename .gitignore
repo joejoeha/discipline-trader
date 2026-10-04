@@ -1,0 +1,12 @@
+node_modules/
+dist/
+src-tauri/target/
+*.db
+*.db-shm
+*.db-wal
+.env*
+!.env.example
+*.key
+*.pem
+*.pfx
+*.log

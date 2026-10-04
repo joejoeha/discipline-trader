@@ -1,0 +1,51 @@
+{
+  "$schema": "https://schema.tauri.app/config/2",
+  "productName": "纪律交易终端",
+  "version": "0.7.0",
+  "identifier": "com.discipline.trader",
+  "build": {
+    "beforeDevCommand": "pnpm dev",
+    "devUrl": "http://localhost:1420",
+    "beforeBuildCommand": "pnpm build",
+    "frontendDist": "../dist"
+  },
+  "app": {
+    "windows": [
+      {
+        "label": "main",
+        "title": "纪律交易终端",
+        "width": 1536,
+        "height": 864,
+        "minWidth": 900,
+        "minHeight": 680,
+        "center": true,
+        "maximized": true,
+        "resizable": true,
+        "fullscreen": false
+      }
+    ],
+    "security": {
+      "csp": "default-src 'self'; connect-src 'self' ipc: http://ipc.localhost https://api.mexc.com https://contract.mexc.com wss://contract.mexc.com https://futures.ourbit.com wss://futures.ourbit.com; img-src 'self' asset: http://asset.localhost data:; style-src 'self' 'unsafe-inline'; script-src 'self'"
+    }
+  },
+  "bundle": {
+    "active": true,
+    "targets": ["nsis"],
+    "createUpdaterArtifacts": false,
+    "category": "Finance",
+    "shortDescription": "先计划、后交易的双交易所纪律终端",
+    "longDescription": "面向 MEXC 与 Ourbit USDT 永续合约的单用户 Windows 纪律交易终端。默认模拟盘，实盘受交易计划、风险参数、PIN 与能力探测共同保护。",
+    "windows": {
+      "certificateThumbprint": null,
+      "digestAlgorithm": "sha256",
+      "timestampUrl": "",
+      "nsis": {
+        "displayLanguageSelector": false,
+        "installerIcon": null,
+        "installMode": "currentUser",
+        "languages": ["SimpChinese", "English"],
+        "startMenuFolder": "纪律交易终端"
+      }
+    }
+  }
+}

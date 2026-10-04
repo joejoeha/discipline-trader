@@ -1,0 +1,43 @@
+{
+  "name": "discipline-trader",
+  "private": true,
+  "version": "0.7.0",
+  "description": "MEXC / Ourbit 双交易所纪律交易终端",
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host 127.0.0.1",
+    "build": "tsc -b && vite build",
+    "preview": "vite preview --host 127.0.0.1",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:memory:1h": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/memory-stability.ps1 -DurationMinutes 60",
+    "test:memory:quick": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/memory-stability.ps1 -DurationMinutes 5 -WarmupMinutes 1 -SampleSeconds 5",
+    "tauri": "tauri",
+    "tauri:dev": "tauri dev",
+    "preview:desktop": "tauri dev",
+    "tauri:build": "tauri build --bundles nsis"
+  },
+  "dependencies": {
+    "@tauri-apps/api": "^2.8.0",
+    "lightweight-charts": "^5.0.8",
+    "lucide-react": "^0.468.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "zustand": "^5.0.2"
+  },
+  "devDependencies": {
+    "@tauri-apps/cli": "^2.8.0",
+    "@testing-library/jest-dom": "6.9.1",
+    "@testing-library/react": "^16.1.0",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "@vitejs/plugin-react": "^4.3.4",
+    "jsdom": "^25.0.1",
+    "typescript": "~5.7.2",
+    "vite": "^6.0.5",
+    "vitest": "^2.1.8"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
